@@ -1,4 +1,7 @@
 # Hello world github action
 
-This is my first action to be used with my github profile.
-This is just a test small project to adapt me to apple keyboards
+This action will try to search a especify text at a README file and will replace with some responses created by chat gpt.
+
+
+
+This is just a test small project to adapt me to Apple keyboards

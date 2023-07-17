@@ -1,8 +1,12 @@
 name: "chat gpt me"
 description: "create a readme description"
 
-runs: 
-  using: composite
-  steps:
-  - run: go run main.go
-    shell: bash
+inputs:
+  message:
+    required: true
+
+runs:
+  using: docker
+  image: Dockerfile
+  args:
+    - ${{ inputs.message }}

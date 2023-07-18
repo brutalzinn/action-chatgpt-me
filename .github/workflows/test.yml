@@ -1,8 +1,16 @@
+name: Testing deploy with custom github action
+
+on:
+  push:
+    branches: [ "main" ]
+
 jobs:
   github-action-go:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: brutalzinn/action-chatgpt-me@v1
-      	with:
-        	message: hello world action message.
+    - uses: actions/checkout@v3
+
+    - name: Test action chatgpt me
+      uses: brutalzinn/action-chatgpt-me@v1
+      with:
+        message: 'test'

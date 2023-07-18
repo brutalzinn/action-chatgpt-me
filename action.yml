@@ -2,8 +2,11 @@ name: "chat gpt me"
 description: "create a readme description"
 
 inputs:
-  message:
+  CHAT_GPT_API_KEY:
     required: true
+  MARKDOWN_FILE:
+      required: true
+
 
 runs:
   using: docker

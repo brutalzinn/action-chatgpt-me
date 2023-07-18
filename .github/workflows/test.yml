@@ -13,4 +13,6 @@ jobs:
     - name: Test action chatgpt me
       uses: brutalzinn/action-chatgpt-me@v1
       with:
-        message: 'test'
+        CHAT_GPT_API_KEY: 'test'
+        MARKDOWN_FILE: 'README.md'
+        WAKATIME_API_KEY: 'test'

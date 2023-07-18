@@ -6,7 +6,8 @@ inputs:
     required: true
   MARKDOWN_FILE:
       required: true
-
+  WAKATIME_API_KEY:
+      required: true
 
 runs:
   using: docker

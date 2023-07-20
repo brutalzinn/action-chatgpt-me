@@ -5,11 +5,13 @@ import (
 	"action-chatgpt-me/editor"
 	"fmt"
 	"os"
+	"strings"
 )
 
 func main() {
-	wakaTimeApiKey := os.Getenv("WAKATIME_API_KEY")
-	chatGptKey := os.Getenv("CHAT_GPT_API_KEY")
+	args := strings.Join(os.Args[1:], " ")
+	chatGptKey := args[0]
+	wakaTimeApiKey := args[1]
 	fmt.Printf("Now you will see. :) %s %s", wakaTimeApiKey, chatGptKey)
 	filePath := "README.md"
 	markdownTxt, err := editor.ReadMarkdown(filePath)

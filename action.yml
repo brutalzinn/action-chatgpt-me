@@ -3,14 +3,15 @@ description: "create a readme description"
 
 inputs:
   CHAT_GPT_API_KEY:
+    description: 'chat gpt key'
     required: true
-  MARKDOWN_FILE:
-      required: false
   WAKATIME_API_KEY:
-      required: true
+    description: 'waka time'
+    required: true
 
 runs:
   using: docker
   image: Dockerfile
-  args:
-    - ${{ inputs.message }}
+  args: |
+    ${{ inputs.CHAT_GPT_API_KEY }}
+    ${{ inputs.WAKATIME_API_KEY }}

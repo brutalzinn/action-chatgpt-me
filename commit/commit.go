@@ -18,7 +18,7 @@ func Commit(message string) {
 	}
 }
 func Push() {
-	_, err := exec.Command("git", "push").Output()
+	_, err := exec.Command("git", "push", "origin", "main").Output()
 	if err != nil {
 		log.Fatal(err)
 	}

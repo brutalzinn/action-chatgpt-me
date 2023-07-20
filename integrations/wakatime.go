@@ -5,6 +5,7 @@ import (
 	"errors"
 	"io/ioutil"
 	"net/http"
+	"os"
 )
 
 // now i wil use chat gpt here because i need to take a nap
@@ -19,7 +20,7 @@ type UserStats struct {
 
 func GetUserStats() (*UserStats, error) {
 	/// No. You dont wanna se my api key shared at this repo.
-	apiKey := "d2FrYV81Zjg5ZTJhZi0xZWI4LTRmMmYtYjY3Yy00ODA0Nzk2MWY5YTQ=" // os.Getenv("WAKATIME_API_KEY")
+	apiKey := os.Getenv("WAKATIME_API_KEY")
 	client := http.Client{}
 	req, err := http.NewRequest("GET", "https://wakatime.com/api/v1/users/current/stats/last_7_days", nil)
 	if err != nil {

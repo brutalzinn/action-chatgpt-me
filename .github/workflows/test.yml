@@ -11,4 +11,4 @@ jobs:
     - uses: actions/checkout@v2
 
     - name: Test action chatgpt me
-      uses: brutalzinn/action-chatgpt-me@v4
+      uses: brutalzinn/action-chatgpt-me@v5

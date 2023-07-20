@@ -3,7 +3,7 @@ package commit
 import "testing"
 
 func TestCommit(testing *testing.T) {
-	Commit("test")
+	Commit("test commmit")
 }
 func TestAdd(testing *testing.T) {
 	Add()

@@ -5,6 +5,12 @@ import (
 	"os/exec"
 )
 
+func Fetch() {
+	_, err := exec.Command("git", "fetch").Output()
+	if err != nil {
+		log.Fatal(err)
+	}
+}
 func Add() {
 	_, err := exec.Command("git", "add", ".").Output()
 	if err != nil {

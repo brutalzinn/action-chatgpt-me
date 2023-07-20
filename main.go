@@ -14,7 +14,9 @@ func main() {
 	}
 	newTxt := editor.FindAndReplace(markdownTxt, "done.")
 	editor.WriteMarkdown(filePath, newTxt)
+	commit.Fetch()
 	commit.Add()
 	commit.Commit("some update message here")
 	commit.Push()
+	fmt.Printf("ok.")
 }

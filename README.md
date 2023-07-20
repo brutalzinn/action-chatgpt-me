@@ -5,5 +5,5 @@ This action will try to search a especify text at a README file and will replace
 This is just a test small project to adapt me to Apple keyboards
 
 <!--START_SECTION:chatgptme-->
-this will be replaced after action execute.s
+this will be replaced after action execute
 <!--END_SECTION:chatgptme-->

@@ -12,7 +12,7 @@ func main() {
 	if err != nil {
 		fmt.Printf("Something does wrong..")
 	}
-	newTxt := editor.FindAndReplace(markdownTxt, "hello")
+	newTxt := editor.FindAndReplace(markdownTxt, "done.")
 	editor.WriteMarkdown(filePath, newTxt)
 	commit.Add()
 	commit.Commit("some update message here")

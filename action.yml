@@ -5,7 +5,7 @@ inputs:
   CHAT_GPT_API_KEY:
     required: true
   MARKDOWN_FILE:
-      required: true
+      required: false
   WAKATIME_API_KEY:
       required: true
 

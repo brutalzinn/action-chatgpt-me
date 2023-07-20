@@ -1,7 +1,12 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"os"
+)
 
 func main() {
-	fmt.Println("call openapi heres")
+	wakaTimeApiKey := os.Getenv("WAKATIME_API_KEY")
+	chatGptKey := os.Getenv("CHAT_GPT_API_KEY")
+	fmt.Println("No. you will not cant see any of my keys here. :)", wakaTimeApiKey, chatGptKey)
 }

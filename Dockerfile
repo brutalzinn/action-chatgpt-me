@@ -4,6 +4,7 @@ WORKDIR /app
 
 COPY . .
 
+RUN apk update && apk add --no-cache git
 RUN go build -o /bin/app main.go
 
 ENTRYPOINT ["app"]

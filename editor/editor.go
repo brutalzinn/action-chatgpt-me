@@ -37,6 +37,6 @@ func WriteMarkdown(mdPath, newTxt string) error {
 func FindAndReplace(text, newText string) string {
 	pattern := START_SECTION + "[\\s\\S]+" + END_SECTION
 	rgx := regexp.MustCompile(pattern)
-	result := rgx.ReplaceAllString(text, newText)
+	result := rgx.ReplaceAllString(text, START_SECTION+"\n"+newText+"\n"+END_SECTION)
 	return result
 }

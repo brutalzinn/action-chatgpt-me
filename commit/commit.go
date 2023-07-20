@@ -1,16 +1,25 @@
 package commit
 
-import "os/exec"
+import (
+	"log"
+	"os/exec"
+)
 
 func Add() {
-	cmd := exec.Command("git add .")
-	cmd.Run()
+	_, err := exec.Command("bash", "-c", "git add .").Output()
+	if err != nil {
+		log.Fatal(err)
+	}
 }
 func Commit(message string) {
-	cmd := exec.Command("git commit -m \" commit test message \" ")
-	cmd.Run()
+	_, err := exec.Command("bash", "-c", "git commit -m \" commit test message \" ").Output()
+	if err != nil {
+		log.Fatal(err)
+	}
 }
 func Push() {
-	cmd := exec.Command("git push")
-	cmd.Run()
+	_, err := exec.Command("bash", "-c", "git push").Output()
+	if err != nil {
+		log.Fatal(err)
+	}
 }

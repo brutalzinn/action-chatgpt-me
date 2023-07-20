@@ -14,5 +14,5 @@ jobs:
       uses: brutalzinn/action-chatgpt-me@v1
       with:
         CHAT_GPT_API_KEY: 'test_chatgpt_key'
-        MARKDOWN_FILE: 'README.md'
+        # MARKDOWN_FILE: 'README.md'
         WAKATIME_API_KEY: 'test_wakatime_key'

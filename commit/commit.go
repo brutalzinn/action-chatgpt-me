@@ -3,11 +3,14 @@ package commit
 import "os/exec"
 
 func Add() {
-	exec.Command("git add -A")
+	cmd := exec.Command("git add .")
+	cmd.Run()
 }
 func Commit(message string) {
-	exec.Command("git commit -m \" commit test message \" ")
+	cmd := exec.Command("git commit -m \" commit test message \" ")
+	cmd.Run()
 }
 func Push() {
-	exec.Command("git push")
+	cmd := exec.Command("git push")
+	cmd.Run()
 }

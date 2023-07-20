@@ -12,7 +12,7 @@ func Add() {
 	}
 }
 func Commit(message string) {
-	_, err := exec.Command("bash", "-c", "git commit -m \" commit test message \" ").Output()
+	_, err := exec.Command("bash", "-c", "git commit -m \" "+message+"\"").Output()
 	if err != nil {
 		log.Fatal(err)
 	}

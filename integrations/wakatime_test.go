@@ -1,6 +1,7 @@
 package integrations
 
 import (
+	"fmt"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
@@ -16,8 +17,9 @@ func TestWakaTimeUserMetrics(t *testing.T) {
 	userStats, err := GetUserStats()
 	assert.NoError(t, err)
 	assert.NotNil(t, userStats)
-	messages := "This is the time that i recognize that i need some vocation."
+	messages := "My cool profile with wakatime metrics"
 	for _, item := range userStats.Data.Languages {
-		messages += item.Name + " " + item.Time
+		messages += fmt.Sprintf("%s studies hour with %s\n", item.Time, item.Name)
 	}
+	t.Log(messages)
 }

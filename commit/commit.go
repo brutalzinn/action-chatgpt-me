@@ -11,8 +11,15 @@ type GitConfig struct {
 }
 
 func SetConfig(gitCfg GitConfig) error {
-
-	_, err := exec.Command("bash", "-c", "git config --global user.name '"+gitCfg.Username+"'").Output()
+	_, err := exec.Command("bash", "-c", "git init").Output()
+	if err != nil {
+		return err
+	}
+	_, err = exec.Command("bash", "-c", "git remote add origin https://github.com/brutalzinn/action-chatgpt-me").Output()
+	if err != nil {
+		return err
+	}
+	_, err = exec.Command("bash", "-c", "git config --global user.name '"+gitCfg.Username+"'").Output()
 	if err != nil {
 		return err
 	}

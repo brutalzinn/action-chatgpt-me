@@ -20,10 +20,10 @@ func Add() error {
 }
 func Commit(message string) error {
 	commitMessage := fmt.Sprintf("-m '%s'", message)
-	_, err := exec.Command("bash", "-c", "git", "commit", commitMessage).Output()
+	_, err := exec.Command("bash", "-c", "git commit "+commitMessage).Output()
 	return err
 }
 func Push() error {
-	_, err := exec.Command("bash", "-c", "git", "push").Output()
+	_, err := exec.Command("bash", "-c", "git push").Output()
 	return err
 }

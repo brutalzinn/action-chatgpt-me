@@ -11,11 +11,8 @@ type GitConfig struct {
 }
 
 func SetConfig(gitCfg GitConfig) error {
-	_, err := exec.Command("bash", "-c", "git init").Output()
-	if err != nil {
-		return err
-	}
-	_, err = exec.Command("bash", "-c", "git remote add origin https://github.com/brutalzinn/action-chatgpt-me").Output()
+
+	_, err := exec.Command("bash", "-c", "git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY").Output()
 	if err != nil {
 		return err
 	}

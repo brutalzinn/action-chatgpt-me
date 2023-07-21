@@ -1,11 +1,11 @@
 name: "chat gpt me"
 description: "create a readme description with chatgpt and wakatime metrics"
 
-# inputs:
-#   CHAT_GPT_API_KEY:
-#     required: true
-#   WAKATIME_API_KEY:
-#     required: true
+inputs:
+  CHAT_GPT_API_KEY:
+    required: false
+  WAKATIME_API_KEY:
+    required: false
 
 runs:
   using: docker

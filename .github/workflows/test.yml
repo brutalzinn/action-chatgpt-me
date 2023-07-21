@@ -1,8 +1,9 @@
 name: Testing deploy with custom github action
 
 on:
-  push:
-    branches: [ "main" ]
+  workflow_dispatch: # for manual workflow trigger
+  schedule:
+    - cron: "0 0 * * *"
 
 jobs:
   github-action-go:
@@ -11,4 +12,4 @@ jobs:
     - uses: actions/checkout@v2
 
     - name: Test action chatgpt me
-      uses: brutalzinn/action-chatgpt-me@v6
+      uses: brutalzinn/action-chatgpt-me@v8

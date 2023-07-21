@@ -8,15 +8,16 @@ import (
 
 func main() {
 	filePath := "README.md"
-	markdownTxt, err := editor.ReadMarkdown(filePath)
 	gitConfig := commit.GitConfig{
 		Username: "chatgptme",
 		Email:    "chatgptme@noreply.com",
 	}
 	commit.SetConfig(gitConfig)
+	markdownTxt, err := editor.ReadMarkdown(filePath)
 	if err != nil {
 		fmt.Printf("Something does wrong..")
 	}
+
 	newTxt := editor.FindAndReplace(markdownTxt, "done.")
 	editor.WriteMarkdown(filePath, newTxt)
 	commit.Add()

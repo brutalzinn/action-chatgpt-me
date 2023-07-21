@@ -26,6 +26,10 @@ func TestReplaceSection(t *testing.T) {
 	newTxt := FindAndReplace(markdownTxt, "hello")
 	WriteMarkdown(filePath, newTxt)
 	assert.NoError(t, err)
-	assert.Equal(t, newTxt, `cool markdown
-	hello`)
+	expected := "cool markdown\n" + expectedResultWithTags("\nhello\n")
+	assert.Equal(t, expected, newTxt)
+}
+
+func expectedResultWithTags(input string) string {
+	return START_SECTION + input + END_SECTION
 }

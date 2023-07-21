@@ -8,8 +8,8 @@ import (
 
 func TestConfig(t *testing.T) {
 	err := SetConfig(GitConfig{
-		Username: "my name custom",
-		Email:    "blabla@noreply.com",
+		Username: "brutalzinn",
+		Email:    "<>",
 	})
 	assert.NoError(t, err)
 }

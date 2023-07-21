@@ -21,7 +21,7 @@ func SetConfig(gitCfg GitConfig) error {
 }
 
 func Add() error {
-	_, err := exec.Command("bash", "-c", "git add -A").Output()
+	_, err := exec.Command("bash", "-c", "git add .").Output()
 	return err
 }
 func Commit(message string) error {
@@ -30,6 +30,6 @@ func Commit(message string) error {
 	return err
 }
 func Push() error {
-	_, err := exec.Command("bash", "-c", "git push").Output()
+	_, err := exec.Command("bash", "-c", "git push origin main").Output()
 	return err
 }

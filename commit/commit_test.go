@@ -7,7 +7,10 @@ import (
 )
 
 func TestConfig(t *testing.T) {
-	err := SetConfig()
+	err := SetConfig(GitConfig{
+		Username: "my name custom",
+		Email:    "blabla@noreply.com",
+	})
 	assert.NoError(t, err)
 }
 

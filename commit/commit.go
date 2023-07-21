@@ -5,12 +5,18 @@ import (
 	"os/exec"
 )
 
-func SetConfig() error {
-	_, err := exec.Command("bash", "-c", "git", "config", "--global user.name 'chatgptme'").Output()
+type GitConfig struct {
+	Username string
+	Email    string
+}
+
+func SetConfig(gitCfg GitConfig) error {
+
+	_, err := exec.Command("bash", "-c", "git config --global user.name '"+gitCfg.Username+"'").Output()
 	if err != nil {
 		return err
 	}
-	_, err = exec.Command("bash", "-c", "git", "config", "--global user.email '<>'").Output()
+	_, err = exec.Command("bash", "-c", "git config --global user.email '"+gitCfg.Email+"'").Output()
 	return err
 }
 

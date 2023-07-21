@@ -9,6 +9,11 @@ import (
 func main() {
 	filePath := "README.md"
 	markdownTxt, err := editor.ReadMarkdown(filePath)
+	gitConfig := commit.GitConfig{
+		Username: "chatgptme",
+		Email:    "chatgptme@noreply.com",
+	}
+	commit.SetConfig(gitConfig)
 	if err != nil {
 		fmt.Printf("Something does wrong..")
 	}

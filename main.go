@@ -17,7 +17,7 @@ func main() {
 	if err != nil {
 		fmt.Printf("Something does wrong..")
 	}
-
+	fmt.Printf("step find and place.")
 	newTxt := editor.FindAndReplace(markdownTxt, "done.")
 	editor.WriteMarkdown(filePath, newTxt)
 	commit.Add()

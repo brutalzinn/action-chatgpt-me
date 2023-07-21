@@ -12,7 +12,7 @@ jobs:
     - uses: actions/checkout@v2
 
     - name: Test action chatgpt me
-      uses: brutalzinn/action-chatgpt-me@latest
+      uses: brutalzinn/action-chatgpt-me@mainß
       with: 
         CHAT_GPT_API_KEY: apikey
         WAKATIME_API_KEY: apikey

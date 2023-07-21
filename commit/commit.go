@@ -2,26 +2,28 @@ package commit
 
 import (
 	"fmt"
-	"log"
 	"os/exec"
 )
 
-func Add() {
-	_, err := exec.Command("git", "add", ".").Output()
+func SetConfig() error {
+	_, err := exec.Command("bash", "-c", "git", "config", "--global user.name 'chatgptme'").Output()
 	if err != nil {
-		log.Fatal(err)
+		return err
 	}
+	_, err = exec.Command("bash", "-c", "git", "config", "--global user.email '<>'").Output()
+	return err
 }
-func Commit(message string) {
+
+func Add() error {
+	_, err := exec.Command("bash", "-c", "git add -A").Output()
+	return err
+}
+func Commit(message string) error {
 	commitMessage := fmt.Sprintf("-m '%s'", message)
-	_, err := exec.Command("git", "commit", commitMessage).Output()
-	if err != nil {
-		log.Fatal(err)
-	}
+	_, err := exec.Command("bash", "-c", "git", "commit", commitMessage).Output()
+	return err
 }
-func Push() {
-	_, err := exec.Command("git", "push").Output()
-	if err != nil {
-		log.Fatal(err)
-	}
+func Push() error {
+	_, err := exec.Command("bash", "-c", "git", "push").Output()
+	return err
 }

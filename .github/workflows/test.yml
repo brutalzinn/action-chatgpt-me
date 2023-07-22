@@ -24,4 +24,4 @@ jobs:
         git config --global user.name "Chat GPT me"
         git add -A
         git commit -m "Added presentation from GitHub Actions"
-        git push
+        git push --force

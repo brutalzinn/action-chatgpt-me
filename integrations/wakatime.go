@@ -8,13 +8,36 @@ import (
 	"os"
 )
 
-// now i wil use chat gpt here because i need to take a nap
+type BestDay struct {
+	Time string `json:"text"`
+}
+type Language struct {
+	Name string `json:"name"`
+	Time string `json:"text"`
+}
+
+type Category struct {
+	Name string `json:"name"`
+	Time string `json:"text"`
+}
+
+type Project struct {
+	Name string `json:"name"`
+	Time string `json:"text"`
+}
+
+type OperationalSystem struct {
+	Name string `json:"name"`
+	Time string `json:"text"`
+}
+
 type UserStats struct {
 	Data struct {
-		Languages []struct {
-			Name string `json:"name"`
-			Time string `json:"text"`
-		} `json:"languages"`
+		Category          []Category          `json:"categories"`
+		Language          []Language          `json:"languages"`
+		Project           []Project           `json:"projects"`
+		OperationalSystem []OperationalSystem `json:"operating_systems"`
+		BestDay           BestDay             `json:"best_day"`
 	} `json:"data"`
 }
 

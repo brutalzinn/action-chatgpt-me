@@ -10,31 +10,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-
     - name: Test action chatgpt me
       uses: brutalzinn/action-chatgpt-me@main
-      with: 
-        CHAT_GPT_API_KEY: apikey
-        WAKATIME_API_KEY: apikey
-                
-    - name: Run QOTD action
+      env:
+          CHAT_GPT_API_KEY: ${{ secrets.CHAT_GPT_API_KEY }}
+          WAKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }}
 
-      uses: ./ # Uses an action in the root directory
-
-      with:
-
-         category: 'life'
-
+    - name: Run update readme
     - name: Commit and push update
-
       run: |-
-
         git config --global user.email "test@action.com"
-
         git config --global user.name "Chat GPT me"
-
         git add -A
-
         git commit -m "Added presentation from GitHub Actions"
-
         git push

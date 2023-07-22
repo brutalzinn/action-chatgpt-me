@@ -19,6 +19,7 @@ jobs:
               
     - name: Commit and push update
       run: |-
+        git pull
         git config --global user.email "test@action.com"
         git config --global user.name "Chat GPT me"
         git add -A

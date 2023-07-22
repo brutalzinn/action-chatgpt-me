@@ -10,6 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
+
     - name: Test action chatgpt me
       uses: brutalzinn/action-chatgpt-me@main
       env:
@@ -17,6 +18,7 @@ jobs:
           WAKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }}
               
     - name: Commit and push update
+      uses: ./ 
       run: |-
         git config --global user.email "test@action.com"
         git config --global user.name "Chat GPT me"
